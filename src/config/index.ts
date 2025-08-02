@@ -1,50 +1,40 @@
-import { cookieStorage, createStorage } from 'wagmi'
-import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
+import { cookieStorage, createStorage } from "wagmi";
+import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
 
 // Get projectId from environment variables with fallback
-export const projectId = `ff7e4c6da87929d965ceb31b6a72924c` ;
+export const projectId = `ff7e4c6da87929d965ceb31b6a72924c`;
 
-// Define the custom Pharos Devnet chain
-export const pharosDevnet = {
-  id: 50002,
-  name: 'Pharos Devnet',
-  chainNamespace: 'eip155',
-  nativeCurrency: { name: 'Pharos', symbol: 'PHAROS', decimals: 18 },
+export const etherlinkTestnet = {
+  id: 128123,
+  name: "Etherlink Testnet",
+  chainNamespace: "eip155",
+  nativeCurrency: {
+    name: "Tezos",
+    symbol: "XTZ",
+    decimals: 18, // Note: Although Tezos natively uses 6 decimals, Etherlink is EVM-compatible, so 18 is likely correct here.
+  },
   rpcUrls: {
-    default: { http: ['https://devnet.dplabs-internal.com'] },
-    public: { http: ['https://devnet.dplabs-internal.com'] },
+    default: { http: ["https://node.ghostnet.etherlink.com"] },
+    public: { http: ["https://node.ghostnet.etherlink.com"] },
   },
   blockExplorers: {
-    default: { name: 'PharosScan Devnet', url: 'https://devnet.pharosscan.xyz' },
+    default: {
+      name: "Etherlink Explorer",
+      url: "https://testnet.explorer.etherlink.com",
+    },
   },
 };
 
-
-
-export const pharosTestnet = {
-  id: 688688,
-  name: 'Pharos Testnet',
-  chainNamespace: 'eip155',
-  nativeCurrency: { name: 'Pharos', symbol: 'PHAROS', decimals: 18 },
-  rpcUrls: {
-    default: { http: ['https://testnet.dplabs-internal.com/'] },
-    public: { http: ['https://testnet.dplabs-internal.com/'] },
-  },
-  blockExplorers: {
-    default: { name: 'PharosScan Testnet', url: 'https://testnet.pharosscan.xyz' },
-  }
-};
-
-export const networks = [pharosDevnet, pharosTestnet];
+export const networks = [etherlinkTestnet];
 
 // Set up the Wagmi Adapter (Config)
 export const wagmiAdapter = new WagmiAdapter({
   storage: createStorage({
-    storage: cookieStorage
+    storage: cookieStorage,
   }),
   ssr: true,
-  projectId: projectId || 'demo-project-id', // Ensure we always have a fallback
-  networks
+  projectId: projectId || "demo-project-id", // Ensure we always have a fallback
+  networks,
 });
 
 export const config = wagmiAdapter.wagmiConfig;

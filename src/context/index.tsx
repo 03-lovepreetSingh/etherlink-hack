@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  wagmiAdapter,
-  projectId,
-  networks,
-  pharosDevnet,
-  pharosTestnet,
-} from "@/config";
+import { wagmiAdapter, projectId, networks, etherlinkTestnet } from "@/config";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createAppKit } from "@reown/appkit/react";
 import React, { type ReactNode } from "react";
@@ -37,7 +31,7 @@ const metadata = {
 const modal = createAppKit({
   adapters: [wagmiAdapter],
   projectId,
-  networks: [pharosDevnet, pharosTestnet],
+  networks: [etherlinkTestnet],
   defaultNetwork: networks[0],
   metadata: metadata,
   features: {
