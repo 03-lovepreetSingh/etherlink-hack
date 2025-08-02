@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+  openwave-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_PROJECT_ID: ${NEXT_PUBLIC_PROJECT_ID}
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=${DATABASE_URL}
+      - NEXT_PUBLIC_AUTH_GITHUB_ID=${NEXT_PUBLIC_AUTH_GITHUB_ID}
+      - NEXT_PUBLIC_AUTH_GITHUB_SECRET=${NEXT_PUBLIC_AUTH_GITHUB_SECRET}
+      - AUTH_SECRET=${AUTH_SECRET}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_S3_BUCKET_NAME=${AWS_S3_BUCKET_NAME}
+      - NEXT_PUBLIC_PINECONE_API_KEY=${NEXT_PUBLIC_PINECONE_API_KEY}
+      - NEXT_PUBLIC_PINECONE_ENVIRONMENT=${NEXT_PUBLIC_PINECONE_ENVIRONMENT:-us-east-1}
+      - NEXT_PUBLIC_SOCKET_URL=${NEXT_PUBLIC_SOCKET_URL:-http://localhost:3000}
+      - NEXT_PUBLIC_STREAM_API_KEY=${NEXT_PUBLIC_STREAM_API_KEY}
+      - STREAM_SECRET=${STREAM_SECRET}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - PINECONE_API_KEY=${PINECONE_API_KEY}
+      - HUGGINGFACE_API_TOKEN=${HUGGINGFACE_API_TOKEN}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - GOOGLE_GENERATIVE_AI_API_KEY=${GOOGLE_GENERATIVE_AI_API_KEY}
+      - NEXT_PUBLIC_PROJECT_ID=${NEXT_PUBLIC_PROJECT_ID}
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

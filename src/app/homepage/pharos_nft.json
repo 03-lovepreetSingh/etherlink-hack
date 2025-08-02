@@ -1,0 +1,16 @@
+{
+  "name": "My NFT Token",
+  "description": "This is a unique NFT token stored on IPFS.",
+  "image": "ipfs://bafkreic5dnd3mtzrziuwdnnirkhe5bcyvqsnewjqododvkquf7lwzjq7ai",
+  "external_url": "https://gateway.pinata.cloud/ipfs/bafkreic5dnd3mtzrziuwdnnirkhe5bcyvqsnewjqododvkquf7lwzjq7ai",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Sky Blue"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    }
+  ]
+}
