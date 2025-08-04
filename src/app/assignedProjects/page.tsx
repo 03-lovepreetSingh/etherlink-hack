@@ -455,15 +455,15 @@ export default function Component() {
                               0
                             )
                             .toFixed(7)}{" "}
-                          <span className="text-sm lg:text-base">PHAROS</span>
+                          <span className="text-sm lg:text-base">Tezos</span>
                         </p>
                       </div>
                       <div className="h-8 w-8 bg-green-100 rounded-full flex items-center justify-center">
                         <img
-                          src="/pharos_small.png"
+                          src="/XTZ.png"
                           width={16}
                           height={16}
-                          alt="Pharos Icon"
+                          alt="Tezos Icon"
                           className="h-4 w-4"
                         />
                       </div>
@@ -721,10 +721,10 @@ export default function Component() {
                               {/* Reward Amount */}
                               <div className="flex items-center gap-2 p-3 bg-neutral-50 dark:bg-neutral-950 rounded-lg">
                                 <img
-                                  src="/pharos_small.png"
+                                  src="/XTZ.png"
                                   width={24}
                                   height={24}
-                                  alt="Pharos Icon"
+                                  alt="Tezos Icon"
                                   className="h-5 w-5 lg:h-6 lg:w-6"
                                 />
                                 <div className="min-w-0 flex-1">
@@ -732,7 +732,7 @@ export default function Component() {
                                     Reward
                                   </p>
                                   <p className="text-sm lg:text-lg font-bold text-neutral-900 dark:text-neutral-100 truncate">
-                                    {issue.rewardAmount} PHAROS
+                                    {issue.rewardAmount} Tezos
                                   </p>
                                 </div>
                               </div>

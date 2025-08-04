@@ -294,10 +294,7 @@ export default function Topbar() {
                             <div className=" text-[14px] flex px-4 mt-1">
                               Balance:{" "}
                               <span>
-                                <img
-                                  src="pharos_small.png"
-                                  className="w-5 h-5"
-                                />{" "}
+                                <img src="XTZ.png" className="w-5 h-5" />{" "}
                               </span>{" "}
                               {tokenBalance
                                 ? parseFloat(tokenBalance.formatted).toFixed(4)

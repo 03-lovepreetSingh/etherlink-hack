@@ -57,8 +57,6 @@ interface IssueData {
   Difficulty?: string;
 }
 
-
-
 interface RepoUser {
   name?: string | null;
   email?: string | null;
@@ -405,7 +403,7 @@ export default function RepositoryIssuesPage() {
                 </h2>
                 {totalRewardAmount > 0 && (
                   <p className="text-sm text-muted-foreground mt-1">
-                    Total rewards: {totalRewardAmount.toFixed(4)} PHAROS
+                    Total rewards: {totalRewardAmount.toFixed(4)} Tezos
                   </p>
                 )}
               </div>
@@ -433,8 +431,8 @@ export default function RepositoryIssuesPage() {
                       <div className="flex flex-col items-end gap-2 flex-shrink-0">
                         <div className="flex items-center gap-1 text-white dark:text-white font-bold text-sm lg:text-base">
                           <img
-                            src="/pharos_small.png"
-                            alt="Pharos"
+                            src="/XTZ.png"
+                            alt="Tezos"
                             width={16}
                             height={16}
                             className="w-4 h-4 lg:w-5 lg:h-5"

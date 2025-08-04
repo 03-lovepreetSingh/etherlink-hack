@@ -14,12 +14,11 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 
 interface User {
-    username?: string;
-    email?: string;
-    name?: string;
-    image?: string;
+  username?: string;
+  email?: string;
+  name?: string;
+  image?: string;
 }
-
 
 interface session {
   accessToken?: string;
@@ -31,7 +30,6 @@ interface session {
     image?: string;
   };
 }
-
 
 interface ProjectData {
   projectOwner: session;
@@ -502,7 +500,7 @@ export default function Project() {
             projectName: repo,
             Contributor_id: (session?.user as User)?.username as string,
             issue: isIssueNumber,
-            fullName:(session?.user as User)?.name as string,
+            fullName: (session?.user as User)?.name as string,
             status: "pending",
             skills: skills,
             projectOwner: repoData?.projectOwner,
@@ -933,83 +931,84 @@ export default function Project() {
                               <div className="flex-1">
                                 <div className="flex   gap-2">
                                   <a
-                                        href={`https://github.com/${projects[0]?.projectOwner}/${projects[0]?.project_repository}/issues/${issue.project_issues}`}
-                                        className="bg-neutral-100 dark:bg-custom-dark-neutral rounded-full px-2 py-1 inline-flex items-center"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                      >
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="16"
-                                          height="16"
-                                          viewBox="0 0 16 16"
-                                        >
-                                          <path
-                                            fill="currentColor"
-                                            d="M8 6.1a.31.31 0 0 0-.45.32a2.47 2.47 0 0 0 .51 1.22l.15.13A3 3 0 0 1 9.08 10a3.63 3.63 0 0 1-3.55 3.44a3 3 0 0 1-2.11-.85a3 3 0 0 1-.85-2.22A3.55 3.55 0 0 1 3.63 8a3.66 3.66 0 0 1 1.5-.91A5.2 5.2 0 0 1 5 6v-.16a4.84 4.84 0 0 0-2.31 1.3a4.5 4.5 0 0 0-.2 6.37a4.16 4.16 0 0 0 3 1.22a4.8 4.8 0 0 0 3.38-1.42a4.52 4.52 0 0 0 .21-6.38A4.2 4.2 0 0 0 8 6.1"
-                                          />
-                                          <path
-                                            fill="currentColor"
-                                            d="M13.46 2.54a4.16 4.16 0 0 0-3-1.22a4.8 4.8 0 0 0-3.37 1.42a4.52 4.52 0 0 0-.21 6.38A4.2 4.2 0 0 0 8 9.9a.31.31 0 0 0 .45-.31a2.4 2.4 0 0 0-.52-1.23l-.15-.13A3 3 0 0 1 6.92 6a3.63 3.63 0 0 1 3.55-3.44a3 3 0 0 1 2.11.85a3 3 0 0 1 .85 2.22A3.55 3.55 0 0 1 12.37 8a3.66 3.66 0 0 1-1.5.91a5.2 5.2 0 0 1 .13 1.14v.16a4.84 4.84 0 0 0 2.31-1.3a4.5 4.5 0 0 0 .15-6.37"
-                                          />
-                                        </svg>
-                                      </a>
+                                    href={`https://github.com/${projects[0]?.projectOwner}/${projects[0]?.project_repository}/issues/${issue.project_issues}`}
+                                    className="bg-neutral-100 dark:bg-custom-dark-neutral rounded-full px-2 py-1 inline-flex items-center"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="16"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path
+                                        fill="currentColor"
+                                        d="M8 6.1a.31.31 0 0 0-.45.32a2.47 2.47 0 0 0 .51 1.22l.15.13A3 3 0 0 1 9.08 10a3.63 3.63 0 0 1-3.55 3.44a3 3 0 0 1-2.11-.85a3 3 0 0 1-.85-2.22A3.55 3.55 0 0 1 3.63 8a3.66 3.66 0 0 1 1.5-.91A5.2 5.2 0 0 1 5 6v-.16a4.84 4.84 0 0 0-2.31 1.3a4.5 4.5 0 0 0-.2 6.37a4.16 4.16 0 0 0 3 1.22a4.8 4.8 0 0 0 3.38-1.42a4.52 4.52 0 0 0 .21-6.38A4.2 4.2 0 0 0 8 6.1"
+                                      />
+                                      <path
+                                        fill="currentColor"
+                                        d="M13.46 2.54a4.16 4.16 0 0 0-3-1.22a4.8 4.8 0 0 0-3.37 1.42a4.52 4.52 0 0 0-.21 6.38A4.2 4.2 0 0 0 8 9.9a.31.31 0 0 0 .45-.31a2.4 2.4 0 0 0-.52-1.23l-.15-.13A3 3 0 0 1 6.92 6a3.63 3.63 0 0 1 3.55-3.44a3 3 0 0 1 2.11.85a3 3 0 0 1 .85 2.22A3.55 3.55 0 0 1 12.37 8a3.66 3.66 0 0 1-1.5.91a5.2 5.2 0 0 1 .13 1.14v.16a4.84 4.84 0 0 0 2.31-1.3a4.5 4.5 0 0 0 .15-6.37"
+                                      />
+                                    </svg>
+                                  </a>
                                   <h1 className="text-[18px] font-bold break-words">
                                     {issue.issue_name}
                                   </h1>
                                   {issue.priority && (
-                                      <span
-                                        className={` h-fit px-2 py-1 rounded-full text-xs font-medium ${
-                                          issue.priority.toLowerCase() ===
-                                          "hard"
-                                            ? "bg-red-100 text-red-800"
-                                            : issue.priority.toLowerCase() ===
-                                              "medium"
-                                            ? "bg-yellow-100 text-yellow-800"
-                                            : "bg-green-100 text-green-800"
-                                        }`}
-                                      >
-                                        {issue.priority}
-                                      </span>
-                                    )}
-                                  <div className="flex gap-2 flex-wrap">
-                                    
-                                  </div>
+                                    <span
+                                      className={` h-fit px-2 py-1 rounded-full text-xs font-medium ${
+                                        issue.priority.toLowerCase() === "hard"
+                                          ? "bg-red-100 text-red-800"
+                                          : issue.priority.toLowerCase() ===
+                                            "medium"
+                                          ? "bg-yellow-100 text-yellow-800"
+                                          : "bg-green-100 text-green-800"
+                                      }`}
+                                    >
+                                      {issue.priority}
+                                    </span>
+                                  )}
+                                  <div className="flex gap-2 flex-wrap"></div>
                                 </div>
 
                                 <div className="flex flex-wrap items-center gap-2 mt-2">
                                   {projects && issues ? (
                                     <>
-                                    <div className="text-neutral-700 dark:text-neutral-300">
-                                    {Math.floor(
-                                      (new Date().getTime() -
-                                        new Date(issue.issue_date).getTime()) /
-                                        (1000 * 60 * 60 * 24)
-                                    )}{" "}
-                                    days ago
-                                    <p className="text-neutral-700 dark:text-neutral-300">
-                                    Assigned to{" "}
-                                    {issue.assignees &&
-                                    issue.assignees.length > 0
-                                      ? issue.assignees
-                                          .slice(0, 2)
-                                          .map(
-                                            (assignee: any, index: number) => (
-                                              <span key={assignee.id}>
-                                                {index > 0 && ", "}
-                                                <span className="px-[3px]">
-                                                  {assignee.login}
-                                                </span>
-                                              </span>
-                                            )
-                                          )
-                                      : "no one"}
-                                    {issue.assignees &&
-                                      issue.assignees.length > 2 &&
-                                      "..."}
-                                  </p>
-                                  </div>
-                                     
+                                      <div className="text-neutral-700 dark:text-neutral-300">
+                                        {Math.floor(
+                                          (new Date().getTime() -
+                                            new Date(
+                                              issue.issue_date
+                                            ).getTime()) /
+                                            (1000 * 60 * 60 * 24)
+                                        )}{" "}
+                                        days ago
+                                        <p className="text-neutral-700 dark:text-neutral-300">
+                                          Assigned to{" "}
+                                          {issue.assignees &&
+                                          issue.assignees.length > 0
+                                            ? issue.assignees
+                                                .slice(0, 2)
+                                                .map(
+                                                  (
+                                                    assignee: any,
+                                                    index: number
+                                                  ) => (
+                                                    <span key={assignee.id}>
+                                                      {index > 0 && ", "}
+                                                      <span className="px-[3px]">
+                                                        {assignee.login}
+                                                      </span>
+                                                    </span>
+                                                  )
+                                                )
+                                            : "no one"}
+                                          {issue.assignees &&
+                                            issue.assignees.length > 2 &&
+                                            "..."}
+                                        </p>
+                                      </div>
                                     </>
                                   ) : (
                                     <></>
@@ -1033,19 +1032,21 @@ export default function Project() {
 
                               <div className="flex flex-col gap-2">
                                 <div className="flex flex-col sm:flex-row sm:justify-between gap-2 text-sm">
-                                  
                                   <div className="text-center sm:text-right flex">
-                                    <img src="/pharos_small.png" alt="Pharos Logo" width={24} height={24} className="mr-2" />
+                                    <img
+                                      src="/XTZ.png"
+                                      alt="Tezos Logo"
+                                      width={24}
+                                      height={24}
+                                      className="mr-2"
+                                    />
                                     <div className="dark:text-neutral-300 text-xl text-neutral-900 font-bold">
-                                      {issue.rewardAmount} 
+                                      {issue.rewardAmount}
                                     </div>
-                                     
                                   </div>
-                                  
                                 </div>
 
                                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-                                  
                                   <div
                                     onClick={() => {
                                       setIssue(true);
@@ -1056,7 +1057,6 @@ export default function Project() {
                                       Contribute Now
                                     </button>
                                   </div>
-                                  
                                 </div>
                               </div>
                             </div>
@@ -1116,7 +1116,9 @@ export default function Project() {
                           ))}
                       </div>
                     ) : (
-                      <p className="text-neutral-400">No recent commits found</p>
+                      <p className="text-neutral-400">
+                        No recent commits found
+                      </p>
                     )}
                   </div>
 
