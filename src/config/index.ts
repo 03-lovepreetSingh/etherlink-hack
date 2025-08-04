@@ -2,7 +2,7 @@ import { cookieStorage, createStorage } from "wagmi";
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
 
 // Get projectId from environment variables with fallback
-export const projectId = `ff7e4c6da87929d965ceb31b6a72924c`;
+export const projectId = `3feca6b09ac413e651ce2257b9cda678`;
 
 export const etherlinkTestnet = {
   id: 128123,
