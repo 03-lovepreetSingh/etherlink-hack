@@ -28,11 +28,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "openwave.tech",
+        hostname: "s4wo8cksggo84c8kw4g884ss.server.gitfund.tech",
       },
       {
         protocol: "http",
-        hostname: "openwave.tech",
+        hostname: "s4wo8cksggo84c8kw4g884ss.server.gitfund.tech/",
       },
     ],
   },
